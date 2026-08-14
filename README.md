@@ -22,13 +22,13 @@ Volt-Sneaker-store
 │   └── product.css
 ├── data
 │   └── products.json
-├── index.html
 ├── js
 │   ├── cart.js
 │   ├── components.js
 │   ├── filters.js
 │   ├── main.js
 │   └── products.js
+├── index.html
 ├── product.html
 └── README.md
 ```
