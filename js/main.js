@@ -10,6 +10,4 @@ async function loadNav() {
         console.error("Error: ", err)
     }
 }
-
-
 loadNav()
