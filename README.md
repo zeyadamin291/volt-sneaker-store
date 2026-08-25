@@ -4,8 +4,17 @@ A modern and responsive sneaker e-commerce frontend built with HTML, CSS, and Va
 # project structure
 ```
 Volt-Sneaker-store
+.
+├── about.html
 ├── assets
 │   ├── icons
+│   │   ├── cart.svg
+│   │   ├── Container-1.svg
+│   │   ├── Container.svg
+│   │   ├── global.svg
+│   │   ├── profile.svg
+│   │   ├── search.svg
+│   │   └── x-button.svg
 │   └── images
 │       ├── categories
 │       ├── hero
@@ -13,7 +22,8 @@ Volt-Sneaker-store
 ├── components
 │   ├── cart.html
 │   ├── footer.html
-│   └── navbar.html
+│   ├── navbar.html
+│   └── products.html
 ├── css
 │   ├── cart.css
 │   ├── global.css
@@ -22,13 +32,13 @@ Volt-Sneaker-store
 │   └── product.css
 ├── data
 │   └── products.json
+├── index.html
 ├── js
 │   ├── cart.js
 │   ├── components.js
 │   ├── filters.js
 │   ├── main.js
-│   └── products.js
-├── index.html
-├── product.html
-└── README.md
+│   └── shop.js
+├── README.md
+└── shop.html
 ```

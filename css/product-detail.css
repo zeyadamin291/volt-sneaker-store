@@ -1,0 +1,39 @@
+/* Custom styling to match the screenshot UI */
+.dark-custom-accordion {
+    max-width: 400px;
+}
+
+.dark-custom-accordion .accordion-item {
+    background-color: #1a1a1a;
+    border: none;
+    border-bottom: 1px solid #2a2a2a;
+    border-radius: 0 !important;
+    /* Remove rounded corners */
+}
+
+.dark-custom-accordion .accordion-button {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: none !important;
+    /* Remove default focus ring */
+    padding: 18px 20px;
+}
+
+.dark-custom-accordion .accordion-button:not(.collapsed) {
+    background-color: #242424;
+    color: #ffffff;
+}
+
+/* Make Bootstrap's default toggle icon white */
+.dark-custom-accordion .accordion-button::after {
+    filter: invert(1);
+}
+
+.dark-custom-accordion .accordion-body {
+    background-color: #141414;
+    color: #aaa;
+    font-family: monospace;
+}
