@@ -1,0 +1,85 @@
+#hero {
+    padding: 5rem;
+    background-image: url("/assets/images/hero/Gemini_Generated_Image_7up79b7up79b7up7.jpeg");
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    width: 60vw;
+    background-image: linear-gradient(to right, #fff, #c3f400);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eyebrow span {
+    width: 7vw;
+    height: 2px;
+    border-radius:1rem ;
+    background-color: #c3f400;
+    margin: .5rem;
+    position: relative;
+    bottom : 1vh;
+}
+
+
+#hero p{
+    font-size: 1.3rem;
+    width: 60vw;
+    color: #dae891;
+    font-weight: 400;
+
+}
+.eyebrow p{
+    font-weight: 500 !important ;
+    color: #c3f400 !important;
+    font-family: monospace !important;
+    font-size: 1rem !important;
+}
+
+#hero-btns{
+    padding: 2rem 0;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    
+}
+.shop-collection{
+    color: #283500;
+    background-color: white;
+    margin-right: 1.5rem;
+}
+
+.brand-statement{
+    text-align: center;
+    padding: 10rem;
+    background-image: radial-gradient(circle 45rem at 94% 18%, #1e2111 , #0E0E0E);
+    color: #fff;
+}
+.brand-statement h1{
+    font-weight: 700;
+    font-size: 3rem;
+}
+.brand-statement span{
+    color: #c3f400;
+}
+.brand-statement p{
+    color:#dae891;
+}
