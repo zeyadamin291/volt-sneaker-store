@@ -1,0 +1,77 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #121212;
+    padding: 15px 40px;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+/* Logo Section */
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+/* Navigation Menu */
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #B3B3B3;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding-bottom: 6px;
+}
+
+header nav ul li a:hover {
+    color: #FFFFFF;
+}
+
+
+#actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#actions div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#actions img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* أيقونة البروفايل (دائرة بيضاء خلف الأيقونة) */
+#actions div:last-child {
+    background-color: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+#actions div:last-child img {
+    width: 16px;
+    height: 16px;
+    filter: none; 
+}
