@@ -1,0 +1,167 @@
+footer {
+    background-color: #0d0d0d;
+    color: #a1a1a1;
+    padding: 2rem;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Footer Main Layout */
+.footer-column {
+    flex: 1;
+    min-width: 160px;
+}
+
+.footer-column:first-child {
+    flex: 2;
+    max-width: 320px;
+    margin-right: 5rem;
+}
+
+/* Typography & Headers */
+.footer-column h2 {
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #888888;
+    margin-bottom: 1.5rem;
+}
+
+/* Navigation Lists */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: #a1a1a1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.footer-column ul li:hover {
+    color: #ffffff;
+}
+
+/* Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-socials a img {
+    width: 20px;
+    height: 20px;
+    filter: opacity(0.7);
+    transition: filter 0.2s ease;
+}
+
+.footer-socials a:hover img {
+    filter: opacity(1) brightness(1.2);
+}
+
+/* Newsletter Input Box */
+.footer-column form {
+    display: flex;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 280px;
+}
+
+.footer-column input[type="email"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.footer-column input[type="email"]::placeholder {
+    color: #555555;
+}
+
+.footer-column button[type="submit"] {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.footer-column button[type="submit"]:hover {
+    background-color: #ccff00;
+}
+
+/* Divider Line */
+footer hr {
+    all: unset;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 2.5rem 0 1.5rem 0;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #666666;
+}
+
+.footer-bottom code {
+    font-family: inherit;
+    background: transparent;
+    color: inherit;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #666666;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: #ffffff;
+}

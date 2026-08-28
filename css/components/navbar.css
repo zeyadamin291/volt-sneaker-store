@@ -51,10 +51,10 @@ header nav ul li a:hover {
 }
 
 #actions div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 #actions img {

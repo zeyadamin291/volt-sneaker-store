@@ -1,0 +1,223 @@
+/* ==================== GLOBAL RESET & BASE ==================== */
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    margin: 0;
+}
+
+main {
+    background-color: #131313;
+    padding: 4rem;
+}
+
+/* ==================== SHOP HERO SECTION ==================== */
+#shop-hero {
+    position: relative;
+    margin-bottom: 3.5rem;
+    padding-right: 60px; /* مساحة لزر السكجول الرأسي */
+}
+
+#shop-hero p:first-child {
+    color: #ccff00;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+}
+
+#shop-hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    line-height: 1;
+}
+
+#shop-hero p:nth-of-type(2) {
+    color: #888888;
+    max-width: 580px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Scroll Indicator Button (Right Side) */
+#shop-hero .btn-primary {
+    all: unset;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888888;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#shop-hero .btn-primary:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+#shop-hero .btn-primary i {
+    font-size: 1.25rem;
+}
+
+/* ==================== NAVBAR / CONTROLS ==================== */
+.shop-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.categories {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Category Pills */
+.categories .btn {
+    all: unset;
+    padding: 0.55rem 1.4rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #141414;
+    color: #777777;
+    transition: all 0.2s ease;
+}
+
+.categories .btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Active Pill (All) */
+.categories .btn-primary,
+.categories .btn.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+}
+
+/* Search Box Input */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    width: 260px;
+    gap: 10px;
+}
+
+.search-box img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.5;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    width: 100%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.search-box input::placeholder {
+    color: #555555;
+}
+
+/* ==================== CARDS GRID ==================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+/* Product Card Styling (لو بتنشئ الكروت بديناميكية عبر shop.js) */
+.product-card {
+    background-color: #121212;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem 0;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    color: #666666;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #888888;
+}
+
+/* ==================== LOAD MORE BUTTON ==================== */
+#shop > .btn-outline-secondary {
+    all: unset;
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+#shop > .btn-outline-secondary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}

@@ -1,9 +1,43 @@
-/* Custom styling to match the screenshot UI */
-.dark-custom-accordion {
+body{
+    color: white;
+    background-color: #131313;
+}
+
+.upper-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.product-gallery{
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: fit-content;
+}
+
+.main-img img{
+    border-radius: 12px;
+    width: 33vw;
+    aspect-ratio: 1/1;
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+.thumbnails img{
+    width: 150px;
+    aspect-ratio: 1/1;
+}
+
+.accordion {
     max-width: 400px;
 }
 
-.dark-custom-accordion .accordion-item {
+.accordion .accordion-item {
     background-color: #1a1a1a;
     border: none;
     border-bottom: 1px solid #2a2a2a;
@@ -11,7 +45,7 @@
     /* Remove rounded corners */
 }
 
-.dark-custom-accordion .accordion-button {
+.accordion .accordion-button {
     background-color: #1a1a1a;
     color: #e0e0e0;
     font-family: monospace;
@@ -22,17 +56,17 @@
     padding: 18px 20px;
 }
 
-.dark-custom-accordion .accordion-button:not(.collapsed) {
+.accordion .accordion-button:not(.collapsed) {
     background-color: #242424;
     color: #ffffff;
 }
 
 /* Make Bootstrap's default toggle icon white */
-.dark-custom-accordion .accordion-button::after {
+.accordion .accordion-button::after {
     filter: invert(1);
 }
 
-.dark-custom-accordion .accordion-body {
+.accordion .accordion-body {
     background-color: #141414;
     color: #aaa;
     font-family: monospace;
