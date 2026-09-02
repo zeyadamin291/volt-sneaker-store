@@ -1,18 +1,20 @@
 # Volt Sneaker Store
 
-A modern, responsive sneaker e-commerce frontend built with semantic HTML, modular CSS, and vanilla JavaScript. Browse products, search in real time, filter by category and price, view product details, and manage a fully interactive shopping cart—without a framework or build step.
+A modern, responsive sneaker e-commerce frontend built with semantic HTML, modular CSS, and vanilla JavaScript. Browse products, search in real time, filter by category and price, sort by price, view product details, manage a fully interactive shopping cart, and walk through a simulated checkout and payment flow — without a framework or build step.
 
 ## Features
 
 - Responsive storefront for desktop, tablet, and mobile screens
-- Dynamic product listings loaded from `data/products.json`
+- Dynamic product listings loaded from `data/products.json` and `data/categories.json`
 - Real-time product search
 - Category and price-range filtering
-- Product detail pages with dynamic content
-- Add, remove, and update cart items
+- Sort products by price (low → high / high → low)
+- Product detail pages with dynamic content (sizes, colors, stock, rating)
+- Add, remove, and update cart items (full CRUD)
 - Cart persistence with browser storage
 - Reusable navbar, product, cart, and footer components
-- Checkout and order-confirmation pages
+- Multi-step checkout (contact → shipping → payment) with a simulated payment result
+- Order-confirmation / receipt page
 - Lightweight frontend with no external dependencies
 
 ## Quick start
@@ -34,14 +36,14 @@ Alternatively, use the **Live Server** extension in Visual Studio Code.
 | Page | Purpose |
 | --- | --- |
 | `index.html` | Homepage with featured content |
-| `shop.html` | Product catalogue, search, and filters |
+| `shop.html` | Product catalogue, search, filters, and sort |
 | `product-detail.html` | Individual product information |
-| `checkout.html` | Checkout flow |
-| `order-confirmed.html` | Order completion screen |
+| `checkout.html` | Contact → shipping → payment checkout flow |
+| `order-confirmed.html` | Simulated payment result / order receipt |
 
 ## Project structure
-```
 
+```
 Volt-Sneaker-store
 ├── assets
 │   ├── icons
@@ -63,14 +65,22 @@ Volt-Sneaker-store
 │   ├── navbar.html
 │   └── products.html
 ├── css
-│   ├── cart.css
 │   ├── global.css
-│   ├── home.css
-│   ├── navbar.css
-│   ├── product.css
-│   └── product-detail.css
+│   ├── components
+│   │   ├── navbar.css
+│   │   └── footer.css
+│   └── pages
+│       ├── cart.css
+│       ├── home.css
+│       ├── product.css
+│       ├── product-detail.css
+│       ├── checkout.css
+│       └── confirmation.css
 ├── data
+│   ├── categories.json
 │   └── products.json
+├── docs
+│   └── documentation.docx
 ├── index.html
 ├── js
 │   ├── cart.js
@@ -85,19 +95,34 @@ Volt-Sneaker-store
 └── shop.html
 ```
 
+## Documentation
+
+`docs/documentation.docx` contains the full system documentation:
+
+- **Data model** — every entity (`User`, `Category`, `Product`, `Cart`, `CartItem`, `Order`, `OrderItem`, `Payment`, `Address`, plus optional `Review` and `PromoCode`), with fields, types, and relationships.
+- **Feature list** — the core requested features (cart CRUD, payment simulation, search, category filter, price sort), the supporting features they depend on, and recommended additions (accounts, wishlist, reviews, promo codes, etc.).
+- **User stories** — one per feature, written as *As a [role], I want to..., so that...*, with acceptance criteria for the core flows.
+
+## Data files
+
+- `data/products.json` — 304 mock shoe products across 8 categories (Running, Basketball, Lifestyle, Training, Boots, Sandals, Skate, Formal). Each product matches the `Product` entity: `id`, `name`, `description`, `price`, `img`, `categoryId`, `sizes`, `colors`, `stock`, `rating`, `createdAt`.
+- `data/categories.json` — the 8 `Category` records (`id`, `name`, `slug`) referenced by each product's `categoryId`.
+- Product images are placeholder URLs (`picsum.photos`) — replace with real product photography before going live.
+
 ## Technologies
 
 - HTML5
 - CSS3
 - Vanilla JavaScript (ES modules)
-- JSON product data
+- JSON product/category data
 - Browser `localStorage` for cart state
 
 ## Customization
 
-- Add or edit products in `data/products.json`.
-- Update global styles in `css/global.css`.
-- Adjust page-specific layouts in the relevant CSS file.
+- Add or edit products in `data/products.json` and categories in `data/categories.json`.
+- Update global styles (colors, type scale, resets) in `css/global.css`.
+- Adjust shared component styles in `css/components/`.
+- Adjust page-specific layouts in the matching file under `css/pages/`.
 - Extend interactions in `js/` without adding a build tool.
 - Place product, hero, category, and icon assets in the matching `assets/` directories.
 
