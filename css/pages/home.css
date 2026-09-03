@@ -1,7 +1,7 @@
 /* ==================== HERO SECTION ==================== */
 #hero {
     padding: 5rem;
-    background-image: url("/assets/images/hero/Gemini_Generated_Image_7up79b7up79b7up7.jpeg");
+    background-image: url("../../assets/images/hero/Gemini_Generated_Image_7up79b7up79b7up7.jpeg");
     background-color: black;
     background-size: cover;
     background-position: center;

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "52243153-865d-499b-be8c-af23d8023a89",
+    "name": "Running",
+    "slug": "running"
+  },
+  {
+    "id": "c0e06552-6488-4c39-be22-0a2580be7b7e",
+    "name": "Basketball",
+    "slug": "basketball"
+  },
+  {
+    "id": "ca20443c-b96c-41b6-9b07-5c8b0e1bd04a",
+    "name": "Lifestyle",
+    "slug": "lifestyle"
+  },
+  {
+    "id": "539e0009-d411-4bbd-9d63-b651fba1f716",
+    "name": "Training",
+    "slug": "training"
+  },
+  {
+    "id": "13f2b412-9c86-4903-bfdc-2ea32e83d010",
+    "name": "Boots",
+    "slug": "boots"
+  },
+  {
+    "id": "cc37f0ab-32e0-4742-93c7-2e2e6af18294",
+    "name": "Sandals",
+    "slug": "sandals"
+  },
+  {
+    "id": "fcfb78c9-486b-4da4-8d6a-c4b0ecd67d37",
+    "name": "Skate",
+    "slug": "skate"
+  },
+  {
+    "id": "16dff1c6-27d8-4694-8ca0-c1ff62d02308",
+    "name": "Formal",
+    "slug": "formal"
+  }
+]

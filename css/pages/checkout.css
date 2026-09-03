@@ -112,9 +112,6 @@ h1,h2,h3{
     box-sizing: border-box;
 }
 
-.order-summary{
-    grid-column: 9/14;
-}
 
 /* ==========================================================================
    Payment header (same treatment as form-header)
@@ -320,8 +317,13 @@ h1,h2,h3{
 }
 
 /* ==========================================================================
-   Order summary
+    Order summary
    ========================================================================== */
+
+.order-summary{
+    grid-column: 9/14;
+}
+
 
 .order-summary h1{
     font-size: 1.4rem;
