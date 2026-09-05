@@ -31,7 +31,7 @@ header nav ul {
     padding: 0;
 }
 
-header nav ul li a {
+li a {
     text-decoration: none;
     color: #B3B3B3;
     font-size: 1rem;
@@ -40,10 +40,15 @@ header nav ul li a {
     padding-bottom: 6px;
 }
 
-header nav ul li a:hover {
+li a:hover {
     color: #FFFFFF;
 }
 
+li a.active {
+    border-bottom: 2px solid white;
+    color: white;
+    font-weight: bold;
+}
 
 #actions {
     display: flex;

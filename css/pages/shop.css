@@ -149,15 +149,20 @@ main {
     color: #555555;
 }
 
+
+
 /* ==================== CARDS GRID ==================== */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-bottom: 4rem;
+    justify-content: start;
+    align-items: center;
+    margin: 4rem 1rem;
 }
 
-/* Product Card Styling (لو بتنشئ الكروت بديناميكية عبر shop.js) */
+/* Product Card Styling (لو بتنشئ الكروت بديناميكية عبر shop.js)
 .product-card {
     background-color: #121212;
     border-radius: 12px;
@@ -197,7 +202,7 @@ main {
     font-size: 0.8rem;
     font-weight: 700;
     color: #888888;
-}
+} */
 
 /* ==================== LOAD MORE BUTTON ==================== */
 #shop > .btn-outline-secondary {
