@@ -10,7 +10,7 @@
       "https://assets.adidas.com/images/w_1880%2Cf_auto%2Cq_auto/da04ae9bb32447dea900f0e7b69074c1_9366/ID8765_HM3_hover.jpg",
       "https://assets.adidas.com/images/w_1880%2Cf_auto%2Cq_auto/9d3cc06872174ec89edf735c5289a378_9366/ID8765_HM4.jpg"
     ],
-    "categoryId": "dg35sm",
+    "categoryId": "52243153-865d-499b-be8c-af23d8023a89",
     "sizes": ["US 8", "US 9", "US 10", "US 11", "US 12"],
     "colors": ["Black", "White"],
     "stock": 45,
@@ -129,6 +129,6 @@
     "colors": ["Black", "Brown"],
     "stock": 19,
     "rating": null,
-    "createdAt": "2026-09-04T00:00:00Z"
+    "createdAt": "2026-09-06T00:00:00Z"
   }
 ]

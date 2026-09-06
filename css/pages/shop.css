@@ -153,58 +153,14 @@ main {
 
 /* ==================== CARDS GRID ==================== */
 #product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    gap: 1rem;
+    justify-content: center;
     align-items: center;
     margin: 4rem 1rem;
 }
 
-/* Product Card Styling (لو بتنشئ الكروت بديناميكية عبر shop.js)
-.product-card {
-    background-color: #121212;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.product-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1.1;
-    object-fit: cover;
-    display: block;
-}
-
-.product-info {
-    padding: 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.product-title {
-    font-size: 1.1rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 0 0.25rem 0;
-}
-
-.product-category {
-    font-size: 0.8rem;
-    color: #666666;
-    margin: 0;
-}
-
-.product-price {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #888888;
-} */
-
-/* ==================== LOAD MORE BUTTON ==================== */
 #shop > .btn-outline-secondary {
     all: unset;
     display: block;

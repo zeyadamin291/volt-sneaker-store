@@ -1,30 +1,9 @@
 import { loadFooter, loadNav } from './components.js'
+import {laodCategories , loadProducts} from './loadData.js'
 loadNav()
 loadFooter()
 
-const loadProducts = async () => {
-    try {
-
-        const response = await fetch("../data/products.json")
-        const products = await response.json();
-        return products
-
-    } catch (err) {
-        console.error(err)
-    }
-}
-
-const laodCategories = async ()=>{
-    try {
-        const response = await fetch("../data/categories.json")
-        const categories = await response.json();
-        return categories
-
-    } catch (err) {
-        console.error(err)
-    }
-}
-const thing = async () => {
+const loadProductList = async () => {
     let productsJson = await loadProducts();
     let categoryJson = await laodCategories();
     let product_list = [];
@@ -51,13 +30,34 @@ const thing = async () => {
 }
 
 
+const loadCategoriesList = async () => {
+    let categoriesJson = await laodCategories();
+    let allBtn = document.createElement('button');
+    allBtn.classList.add('btn','btn-primary')
+    let category_btns = [];
+
+    for (let el of categoriesJson) {
+        const catButton = document.createElement('button')
+        catButton.className = 'btn'
+        catButton.textContent = el.name;
+        catButton.dataset.category = el.id || el.name;
+
+        category_btns.push(catButton)
+    }
+    return category_btns;
+}
+
 let product_list = document.getElementById('product-list');
+let category_list = document.getElementsByClassName('categories')[0];
 
 try {
-    
-    const products = await thing();
-    product_list.innerHTML = products.map(product => product.documentElement.outerHTML).join('');
 
+    const products = await loadProductList();
+    product_list.innerHTML = products.map(product => product.documentElement.outerHTML).join('');
+    const categories = await loadCategoriesList(); 
+    categories.forEach(category => {
+        category_list.appendChild(category);
+    });
 }
 catch (error) {
     console.error(error)
