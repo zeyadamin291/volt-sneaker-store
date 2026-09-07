@@ -97,6 +97,14 @@ body{
     border-radius: 0.25rem;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: transform 200ms ease-in-out;
+}
+
+
+.add-to-cart button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px #ccff0030;
+
 }
 
 .add-to-cart .plus,
