@@ -12,6 +12,12 @@ export async function loadNav() {
             if (link.getAttribute('href') === pathName) {
                 link.classList.add('active')
             }
+
+            if (pathName.includes('product-detail.html') || pathName.includes('order-confirmed.html') ||
+                pathName.includes('checkout.html')) {
+                console.log(link.getAttribute('href'), 'the second if condition')
+                navlinks[1].classList.add('active');
+            }
         })
     }
     catch (err) {

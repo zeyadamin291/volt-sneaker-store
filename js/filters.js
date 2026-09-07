@@ -1,12 +1,14 @@
-import { loadProducts } from "./shop.js"
+import { loadProducts } from "./loadData.js"
 
 
-const filterProducts = async (id) => {
+export const filterProducts = async (id) => {
     const products = await loadProducts(); 
     
     let filteredProducts = products.filter(product => {
         return product.categoryId === id; 
     });
     
+    console.log(typeof filteredProducts)
+    console.log( filteredProducts)
     return filteredProducts;
 }

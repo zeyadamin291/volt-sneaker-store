@@ -125,6 +125,7 @@ main {
     padding: 0.4rem 1rem;
     width: 260px;
     gap: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-box img {
@@ -146,10 +147,14 @@ main {
 }
 
 .search-box input::placeholder {
-    color: #555555;
+    color: #555555 !important;
+    opacity: 1 !important;
 }
 
-
+.search-box:focus-within {
+    border-color: #ccff00;
+    box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.2); /* اختياري: تأثير خارجي */
+}
 
 /* ==================== CARDS GRID ==================== */
 #product-list {
@@ -182,3 +187,4 @@ main {
     background-color: #ffffff;
     color: #000000;
 }
+
