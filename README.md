@@ -44,7 +44,8 @@ Alternatively, use the **Live Server** extension in Visual Studio Code.
 ## Project structure
 
 ```
-Volt-Sneaker-store
+volt-sneaker-store
+├── README.md
 ├── assets
 │   ├── icons
 │   │   ├── cart.svg
@@ -58,7 +59,6 @@ Volt-Sneaker-store
 │       ├── categories
 │       ├── hero
 │       └── products
-├── checkout.html
 ├── components
 │   ├── cart.html
 │   ├── footer.html
@@ -67,41 +67,56 @@ Volt-Sneaker-store
 ├── css
 │   ├── global.css
 │   ├── components
+│   │   ├── cart.css
+│   │   ├── footer.css
 │   │   ├── navbar.css
-│   │   └── footer.css
+│   │   └── product.css
 │   └── pages
-│       ├── cart.css
-│       ├── home.css
-│       ├── product.css
-│       ├── product-detail.css
 │       ├── checkout.css
-│       └── confirmation.css
+│       ├── home.css
+│       ├── order-confirmed.css
+│       ├── product-detail.css
+│       └── shop.css
 ├── data
 │   ├── categories.json
 │   └── products.json
-├── docs
-│   └── documentation.docx
-├── index.html
 ├── js
 │   ├── cart.js
 │   ├── components.js
 │   ├── filters.js
-│   ├── main.js
+│   ├── index.js
+│   ├── loadData.js
 │   ├── product-detail.js
+│   ├── search.js
 │   └── shop.js
-├── order-confirmed.html
-├── product-detail.html
-├── README.md
-└── shop.html
+└── pages
+    ├── checkout.html
+    ├── index.html
+    ├── order-confirmed.html
+    ├── product-detail.html
+    └── shop.html
 ```
 
-## Documentation
+## Key JavaScript Modules
 
-`docs/documentation.docx` contains the full system documentation:
+| Module | Purpose |
+| --- | --- |
+| `index.js` | Main entry point and initialization |
+| `loadData.js` | Loads product and category data from JSON files |
+| `components.js` | Renders reusable UI components (navbar, footer, products) |
+| `cart.js` | Shopping cart management and persistence |
+| `search.js` | Real-time product search functionality |
+| `filters.js` | Product filtering by category and price range |
+| `shop.js` | Shop page product display and sorting logic |
+| `product-detail.js` | Dynamic product detail page rendering |
 
-- **Data model** — every entity (`User`, `Category`, `Product`, `Cart`, `CartItem`, `Order`, `OrderItem`, `Payment`, `Address`, plus optional `Review` and `PromoCode`), with fields, types, and relationships.
-- **Feature list** — the core requested features (cart CRUD, payment simulation, search, category filter, price sort), the supporting features they depend on, and recommended additions (accounts, wishlist, reviews, promo codes, etc.).
-- **User stories** — one per feature, written as *As a [role], I want to..., so that...*, with acceptance criteria for the core flows.
+## CSS Architecture
+
+The CSS is organized into two main sections:
+
+- **Global**: `global.css` contains base styles, typography, and utilities
+- **Components**: Modular styles for navbar, footer, cart, and products in `css/components/`
+- **Pages**: Page-specific styles in `css/pages/` for home, shop, product detail, checkout, and order confirmation
 
 ## Data files
 
