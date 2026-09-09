@@ -37,3 +37,26 @@ export async function loadFooter() {
         console.error("Error: ", err)
     }
 }
+
+
+export async function addToCart(productId, quantity) {
+    try {
+        const response = await fetch("../data/products.json")
+        const products = await response.json();
+        for (const product of products) {
+            if (product.id === productId) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let existingProductIndex = cart.findIndex(item => item.id === productId);
+                if (existingProductIndex !== -1) {
+                    cart[existingProductIndex].quantity += quantity;
+                } else {
+                    cart.push({ ...product, quantity });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                return;
+            }
+        }
+    } catch (err) {
+        console.error(err)
+    }
+}

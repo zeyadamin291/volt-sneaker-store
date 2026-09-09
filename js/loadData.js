@@ -19,3 +19,14 @@ export const laodCategories = async () => {
         console.error(err)
     }
 }
+
+
+export const loadProductById = async id => {
+    const response = await fetch("../data/products.json")
+    const products = await response.json();
+    for (const product of products){
+        if(product.id === id){
+            return product;
+        }
+    }
+}
