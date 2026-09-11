@@ -19,6 +19,7 @@ export async function loadNav() {
                 navlinks[1].classList.add('active');
             }
         })
+
     }
     catch (err) {
         console.error("Error: ", err)
@@ -38,25 +39,40 @@ export async function loadFooter() {
     }
 }
 
-
-export async function addToCart(productId, quantity) {
+export async function loadCart() {
+    const cart = document.getElementById('cart');
+    console.log("cart loaded")
     try {
-        const response = await fetch("../data/products.json")
-        const products = await response.json();
-        for (const product of products) {
-            if (product.id === productId) {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                let existingProductIndex = cart.findIndex(item => item.id === productId);
-                if (existingProductIndex !== -1) {
-                    cart[existingProductIndex].quantity += quantity;
-                } else {
-                    cart.push({ ...product, quantity });
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-                return;
-            }
-        }
-    } catch (err) {
-        console.error(err)
+        const response = await fetch('../components/cart.html');
+        console.log("fetched cart")
+        if (!response.ok) throw new Error('Network response has crashed');
+        const html = await response.text();
+        console.log(html)
+        cart.innerHTML = html;
+        console.log(cart)
+    }
+    catch (err) {
+        console.error("Error: ", err)
     }
 }
+// export async function addToCart(productId, quantity) {
+//     try {
+//         const response = await fetch("../data/products.json")
+//         const products = await response.json();
+//         for (const product of products) {
+//             if (product.id === productId) {
+//                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+//                 let existingProductIndex = cart.findIndex(item => item.id === productId);
+//                 if (existingProductIndex !== -1) {
+//                     cart[existingProductIndex].quantity += quantity;
+//                 } else {
+//                     cart.push({ ...product, quantity });
+//                 }
+//                 localStorage.setItem('cart', JSON.stringify(cart));
+//                 return;
+//             }
+//         }
+//     } catch (err) {
+//         console.error(err)
+//     }
+// }

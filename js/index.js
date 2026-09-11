@@ -1,3 +1,4 @@
-import {loadFooter, loadNav}from './components.js'
+import {loadCart, loadFooter, loadNav}from './components.js'
 loadNav()
 loadFooter()
+loadCart()
