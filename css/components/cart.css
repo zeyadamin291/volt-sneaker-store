@@ -28,9 +28,6 @@
 #cart.active {
     transform: translateX(0);
 }
-#cart.hidden{
-    background-color: transparent;
-}
 /* --- Upper Section (Header) --- */
 .upper-section {
     display: flex;
@@ -38,15 +35,6 @@
     align-items: center;
     padding: 24px;
     border-bottom: 1px solid #262626;
-}
-
-.upper-section h2 {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #ccff00; /* Neon green */
-    margin: 0;
-    text-transform: uppercase;
 }
 
 .x-button {
@@ -113,34 +101,6 @@
     border-radius: 4px;
 }
 
-.item-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.item-title {
-    font-size: 13px;
-    font-weight: 600;
-    margin: 0 0 4px 0;
-    color: #ffffff;
-}
-
-.item-category {
-    font-size: 10px;
-    color: #888888;
-    text-transform: uppercase;
-    margin: 0 0 8px 0;
-    letter-spacing: 0.5px;
-}
-
-.item-price {
-    color: #ccff00; /* Neon green */
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: auto;
-}
-
 /* Quantity Selector (- 1 +) */
 .quantity-controls {
     display: flex;
@@ -174,28 +134,6 @@
     font-size: 12px;
     font-weight: 600;
     color: #ffffff;
-}
-
-/* Delete/Trash Icon */
-.delete-icon {
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #444444;
-    padding: 0;
-    transition: color 0.2s;
-}
-
-.delete-icon:hover {
-    color: #ff4d4d; /* Red on hover */
-}
-
-.delete-icon svg {
-    width: 16px;
-    height: 16px;
 }
 
 /* --- Bottom Section (Checkout) --- */

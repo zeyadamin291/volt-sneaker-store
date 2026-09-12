@@ -1,4 +1,4 @@
-import { loadFooter, loadNav } from './components.js'
+import { bindProductListeners, loadFooter, loadNav } from './components.js'
 import { laodCategories, loadProducts } from './loadData.js'
 import { filterProducts } from './filters.js'
 loadNav()
@@ -56,6 +56,7 @@ try {
 
     const products = await loadProductList();
     product_list.innerHTML = products.map(product => product.documentElement.outerHTML).join('');
+    bindProductListeners();
     const categories = await loadCategoriesList();
     categories.forEach(category => {
         category_list.appendChild(category);
@@ -90,9 +91,11 @@ try {
                 const filteredProducts = await filterProducts(categoryId);
                 const products = await loadProductList(filteredProducts);
                 product_list.innerHTML = products.map(product =>
-                    product.documentElement.outerHTML  // ✅ Convert Document → HTML string
+                    product.documentElement.outerHTML
                 ).join('');
             }
+
+            bindProductListeners();
         })
     })
 }
@@ -103,15 +106,28 @@ catch (err) {
 
 
 try {
-    let productCards = document.querySelectorAll('.product')
-    productCards.forEach(card => {
-        console.log(card)
-        card.addEventListener('click', () => {
-            const productId = card.dataset.id; // أو من attribute
-            window.location.href = `product-detail.html?id=${productId}`;
-        })
-    })
+    const attachCardNavigation = () => {
+        let productCards = document.querySelectorAll('.product');
+
+        productCards.forEach(card => {
+            if (card.dataset.navigationBound === 'true') return;
+
+            card.dataset.navigationBound = 'true';
+            card.addEventListener('click', event => {
+                if (event.target.closest('.add-product')) return;
+
+                const productId = card.dataset.id;
+                if (productId) {
+                    window.location.href = `product-detail.html?id=${productId}`;
+                }
+            });
+        });
+    };
+
+    attachCardNavigation();
 }
 catch (err) {
     console.error(err)
 }
+
+

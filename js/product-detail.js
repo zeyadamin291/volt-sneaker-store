@@ -1,4 +1,4 @@
-import { loadNav, loadFooter } from "./components.js"
+import { addToCart, loadNav, loadFooter } from "./components.js"
 import { loadProductById } from "./loadData.js";
 
 loadNav()
@@ -21,19 +21,21 @@ function loadQuantity() {
     quantity.textContent = 1;
     return 1;
 }
-console.log(Number(quantity.innerHTML))
+
 let currentQnt = loadQuantity();
 
-plusButton.addEventListener('click', () => {
-    localStorage.setItem('product-quantity', ++currentQnt)
+const updateQuantity = (nextQuantity) => {
+    currentQnt = Math.max(1, Number(nextQuantity) || 1);
     quantity.textContent = currentQnt;
-})
+    localStorage.setItem('product-quantity', String(currentQnt));
+};
+
+plusButton.addEventListener('click', () => {
+    updateQuantity(currentQnt + 1);
+});
 minusButton.addEventListener('click', () => {
-    if (Number(quantity.innerHTML) > 0) {
-        localStorage.setItem('product-quantity', --currentQnt)
-        quantity.textContent = currentQnt;
-    }
-})
+    updateQuantity(currentQnt - 1);
+});
 
 /*====================================== Fetching data ==========================================*/
 
@@ -82,12 +84,26 @@ const fetchData = async () => {
 
 try {
     const id = getProductID();
-    console.log(id)
-    fetchSizes()    
-    fetchData()
-    document.querySelector('.add-product').addEventListener('click', () => {
-        addToCart(id, Number(quantity.innerHTML))
-    })
+    fetchSizes();
+    fetchData();
+
+    const addToCartButton = document.querySelector('.add-to-cart button:last-of-type');
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', async () => {
+            const product = await loadProductById(id);
+            if (!product) return;
+
+            const selectedQuantity = Math.max(1, Number(quantity.textContent || 1));
+            addToCart({
+                id: product.id,
+                name: product.name,
+                price: Number(product.price),
+                basePrice: Number(product.price),
+                img: product.img,
+                count: selectedQuantity
+            });
+        });
+    }
 } catch (err) {
     console.error(err)
 }
