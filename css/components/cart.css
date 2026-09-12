@@ -60,8 +60,6 @@
 .x-button img {
     width: 16px;
     height: 16px;
-    /* If your SVG is black, this filter makes it white. 
-       Remove this line if your SVG is already white. */
     filter: invert(1); 
     transition: opacity 0.2s ease;
 }

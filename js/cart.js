@@ -1,8 +1,7 @@
 let productsInCart = []
 const parentElement = ''
-const product_list = document.getElementById('product-list');
+const product_list = document.getElementById('purchases');
 const products = document.querySelectorAll('.product')
-
 
 const calcSubTotal = () => {
     let sumPrice = 0;
@@ -23,7 +22,7 @@ const updateProductsInCart = product => {
     productsInCart.push(product);
 }
 
-const updateCartUI = () => {
+export const updateCartUI = () => {
     if (productsInCart.length > 0) {
         let cartItems = document.getElementById('purchases');
         cartItems.innerHTML = '';
@@ -43,24 +42,10 @@ const updateCartUI = () => {
         const subTotalHTML = document.getElementById('cart-subtotal');
         subTotalHTML.innerHTML = `$${calcSubTotal()}`;
     } else {
-        let cartItems = document.getElementById('cart-items');
-        cartItems.innerHTML = '<p>Your cart is empty.</p>';
+        
     }
 }
 
-const closeBtn = document.getElementById('x-button');
-const openBtn = document.getElementById('cart-button');
-
-document.addEventListener('DOMContentLoaded', () => {
-    openBtn.addEventListener('click', () => {
-        cart.classList.add('active'); // الكلاس ده هو اللي بيعمل الأنيميشن في الـ CSS
-        updateCartUI();
-    });
-
-    closeBtn.addEventListener('click', () => {
-        cart.classList.remove('active');
-    });
-})
 
 products.forEach(product => {
     product.addEventListener('click', (e) => {
